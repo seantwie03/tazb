@@ -1,9 +1,15 @@
 spring:
-  jpa:
-    hibernate:
-      ddl-auto: create
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    locations: "classpath:migrations"
   datasource:
     url: "jdbc:postgresql://${TAZB_HOST:localhost}:5432/tazbdb"
     username: ${TAZB_USER:tazbuser}
     password: ${TAZB_PASSWORD:tazbpassword}
+  h2:
+    console:
+      enabled: false
+logging:
+  level:
+    org:
+      hibernate:
+        type: trace

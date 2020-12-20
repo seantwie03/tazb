@@ -1,0 +1,9 @@
+spring:
+  flyway:
+    locations: "classpath:test_migrations"
+  datasource:
+    # Main uses a postgreSQL 12 database which has case-insensitive collation set on all VARCHAR columns.
+    #  Including IGNORECASE=TRUE to mimick that case-insensitivity.
+    url: "jdbc:h2:mem:tazbdb;DB_CLOSE_DELAY=-1;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;IGNORECASE=TRUE"
+    username: sa
+    password: sa
